@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio e contador</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #clock {
+            font-size: 3em;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        #counter {
+            font-size: 2em;
+            margin: 20px;
+        }
+
+        #theme-toggle {
+            background-color: #28A745;
+        }
+
+        #theme-toggle:hover {
+            background-color: #1f7c34;
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: #ddd;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo à página interativa!</h1>
+
+    <div id="clock">00:00:00</div>
+
+    <button class="button" id="click-button">Clique em mim!</button>
+    <button class="button" id="theme-toggle">Alternar tema</button>
+
+    <div id="counter">Cliques: 0</div>
+
+    <footer>Arthur Cândido</footer>
+
+    <script>
+        // Relógio Digital
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock(); // Inicializa o relógio na primeira carga
+
+        // Contador de Cliques
+        let clickCount = 0;
+        const clickButton = document.getElementById('click-button');
+        const counter = document.getElementById('counter');
+        clickButton.addEventListener('click', function() {
+            clickCount++;
+            counter.textContent = `Cliques: ${clickCount}`;
+        });
+
+        // Alternar Modo Escuro/Claro
+        const themeToggleButton = document.getElementById('theme-toggle');
+        themeToggleButton.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
