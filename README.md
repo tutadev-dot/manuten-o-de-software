@@ -3,7 +3,7 @@ Este código cria uma página web interativa que contém três funcionalidades p
 Estrutura HTML
 O documento HTML começa com a declaração do <!DOCTYPE html>, indicando que estamos usando HTML5. Logo após, no elemento <html>. Dentro do <head>, temos as configurações básicas como o <meta charset="UTF-8">, que garante o suporte a caracteres especiais, e o <meta name="viewport" content="width=device-width, initial-scale=1.0">, que torna a página responsiva, ajustando-se para dispositivos móveis e desktops. O título da página é definido com <title>Relógio e contador</title>.
 
-No <body>, temos o conteúdo visível da página. O título principal é definido por uma tag <h1> que contém o texto "Welcome to the Interactive Page!". Logo abaixo, temos um <div> com o id clock, que será onde o relógio digital será exibido. Ele começa com um valor inicial de 00:00:00, mas será atualizado dinamicamente através do JavaScript.
+No <body>, temos o conteúdo visível da página. O título principal é definido por uma tag <h1> que contém o texto "Bem-vindo à página interativa!". Logo abaixo, temos um <div> com o id clock, que será onde o relógio digital será exibido. Ele começa com um valor inicial de 00:00:00, mas será atualizado dinamicamente através do JavaScript.
 
 Dois botões são criados utilizando a tag <button>. O primeiro tem o id click-button e o texto "Click Me!", que será responsável pelo contador de cliques. O segundo botão, com o id theme-toggle, alterna entre o modo claro e escuro da página. Ambos os botões possuem a classe button para que compartilhem o mesmo estilo visual.
 
